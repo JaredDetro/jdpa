@@ -9,7 +9,7 @@ let presentValue = document.getElementById("fn").value;
 let rate = document.getElementById("sn").value;
 let numYears = document.getElementById("tn").value;
 let p = ((rate/100/12)*presentValue)/(1-(1+(rate/100/12))**-(numYears*12));
-`If you have a $${presentValue} loan for ${numYears} years at ${rate}% interest, your monthly payment will be $${p.toFixed(2)}.`;
+document.getElementById("ans").innerHTML = `If you have a $${presentValue} loan for ${numYears} years at ${rate}% interest, your monthly payment will be $${p.toFixed(2)}.`;
 }
 </script>
 
