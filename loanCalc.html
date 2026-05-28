@@ -4,54 +4,24 @@
 <title>Calculator</title>
 
 <script>
-function add() {
-let a = document.getElementById("fn").value;
-let b = document.getElementById("sn").value;
-let c = Number(a) + Number(b);
-document.getElementById("ans").innerHTML=c;
-}
-
-function subtract() {
-let a = document.getElementById("fn").value;
-let b = document.getElementById("sn").value;
-let c = Number(a) - Number(b);
-document.getElementById("ans").innerHTML=c;
-}
-
-function multiply() {
-let a = document.getElementById("fn").value;
-let b = document.getElementById("sn").value;
-let c = Number(a) * Number(b);
-document.getElementById("ans").innerHTML=c;
-}
-
-function divide() {
-let a = document.getElementById("fn").value;
-let b = document.getElementById("sn").value;
-let c = Number(a) / Number(b);
-document.getElementById("ans").innerHTML=c;
-}
-
-function exponent() {
-let a = document.getElementById("fn").value;
-let b = document.getElementById("sn").value;
-let c = Number(a) ** Number(b);
-document.getElementById("ans").innerHTML=c;
+function findValue() {
+let presentValue = document.getElementById("fn").value;
+let rate = document.getElementById("sn").value;
+let numYears = document.getElementById("tn").value;
+let p = ((rate/100/12)*presentValue)/(1-(1+(rate/100/12))**-(numYears*12));
+document.getElementById("ans").innerHTML=p;
 }
 </script>
 
 </head>
 <body>
 
-<h3>This is a sample JavaScript and HTML Document.</h3>
+<h3>Welcome to the Loan Calculator!</h3>
 
-<p>Enter your first number: <input id="fn"> <br>
-Enter your second number: <input id="sn"> <br>
-<button onclick="add()">+</button>
-<button onclick="subtract()">-</button>
-<button onclick="multiply()">*</button>
-<button onclick="divide()">/</button>
-<button onclick="exponent()">^</button>
+<p><input id="fn"> Present Value — Amount you wish to borrow <br>
+   <input id="sn"> Years <input id="sn"> <br>
+   <input id="tn"> % — Annual Interest Rate <br>
+<button onclick="add()">Calculate the Monthly Payment</button>
 </p>
 <p>
   The total is: <span id="ans">__________</span>
